@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>saque báncario</title>
+</head>
+<body>
+    <form>
+   <p> saldo: <input type="number" id="saldo" readonly value="2500"> </p>
+        <p> saque: <input type="number" id="saque"> </p>
+
+    
+        <!--saldo atual:<input type="text"id="result" readoaly placeholder="saida">
+        </P>-->
+        <button type="button" onclick="Dados()">validar</button>
+
+       </form>
+      <script>
+        function Dados(){
+            let saldo =  parseFloat(document.getElementById("saldo").value);
+            //document.getElementById("saque").value = saque;
+
+            let saque =parseFloat (document.getElementById("saque").value);
+            //document.getElementById("saldo").value = saldo;
+
+            if (saque <= saldo){
+                let operacao= saldo - saque;
+                document.getElementById("saldo").value = operacao;
+                alert("valor retirado!");
+            }else{
+                alert("o valor do saque é maior que o saldo atual");
+            }
+       }
+    </script>
+    
+</body>
+</html>
